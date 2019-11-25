@@ -16,7 +16,8 @@ services:
 
   php:
     build:
-      ./php
+      ./app
+#    working_dir: /app
     volumes:
       - ./app:/app
 
@@ -26,8 +27,8 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_USER: "root"
-#      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_USER: ""
+      MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: etest
 #    network_mode: host
     restart: always
